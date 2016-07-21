@@ -6,21 +6,10 @@
   <strong>Body</strong>
   <%= @post.body %>
 </p>
-
 <h2>Comments</h2>
-<% @post.comments.each do |comment| %>
-  <p>
-    <strong>Commenter:</strong>
-    <%= comment.commenter %>
-  </p>
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.body %>
-  </p>
-<% end %>
 
-<%= render 'comment' %>
+<%= render @post.comments %>
 
-<p>
-  <%= link_to 'Show Posts', posts_path() %>
-</p>
+<h2>Add a comment:</h2>
+
+<%= render 'comments/form' %>
