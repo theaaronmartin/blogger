@@ -1,11 +1,25 @@
 <p>
-  <strong>Title</strong><br>
+  <strong>Title</strong>
   <%= @post.title %>
 </p>
 <p>
-  <strong>Body</strong><br>
+  <strong>Body</strong>
   <%= @post.body %>
 </p>
+
+<h2>Comments</h2>
+<% @post.comments.each do |comment| %>
+  <p>
+    <strong>Commenter:</strong>
+    <%= comment.commenter %>
+  </p>
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+<% end %>
+
+<%= render 'comment' %>
 
 <p>
   <%= link_to 'Show Posts', posts_path() %>
